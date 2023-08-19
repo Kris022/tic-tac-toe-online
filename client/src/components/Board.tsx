@@ -32,7 +32,11 @@ export default function Board() {
     setSquares(nextSquares);
   };
 
-
+  /**
+   * Calculates the winner of the game.
+   * @param {string[]} squares - The current state of squares.
+   * @returns {string | null} The symbol of the winner ("X" or "O") or null if no winner.
+   */
   function calculateWinner(squares: number[][]) {
     const lines = [
       [0, 1, 2],
