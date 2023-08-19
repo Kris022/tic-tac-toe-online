@@ -7,6 +7,10 @@ export default function Board() {
   const [isXNext, setIsXNext] = useState<boolean>(true);
 
   const handleClick = (i: number) => {
+    if (squares[i]) {
+      return;
+    }
+    
     const nextSquares = squares.slice(); // creates copy of squares array
     if (isXNext) {
       nextSquares[i] = "X"; //
