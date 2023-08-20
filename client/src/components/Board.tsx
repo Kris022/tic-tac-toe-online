@@ -34,10 +34,11 @@ export default function Board() {
 
   /**
    * Calculates the winner of the game.
-   * @param {string[]} squares - The current state of squares.
+   * @param {string[]} squares - The current state of the board.
    * @returns {string | null} The symbol of the winner ("X" or "O") or null if no winner.
    */
   function calculateWinner(squares: number[][]) {
+    // Possbile win combinations
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
@@ -50,6 +51,7 @@ export default function Board() {
       [0, 4, 8],
       [2, 4, 6],
     ];
+
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (
@@ -64,7 +66,7 @@ export default function Board() {
   }
 
   return (
-    <>
+    <div>
       <h1>{status}</h1>
       <div className="board-row">
         <Square onSquareClick={() => handleClick(0)} value={squares[0]} />
@@ -81,6 +83,6 @@ export default function Board() {
         <Square onSquareClick={() => handleClick(7)} value={squares[7]} />
         <Square onSquareClick={() => handleClick(8)} value={squares[8]} />
       </div>
-    </>
+    </div>
   );
 }
