@@ -42,7 +42,7 @@ h1 {
   display: flex;
 }
 
-button {
+.square {
   width: 100px;
   height: 100px;
   border: 1px solid transparent;
@@ -59,7 +59,7 @@ button {
   justify-content: center;
 }
 
-button:hover {
+.square:hover {
   border-color: #646cff;
 }
 
